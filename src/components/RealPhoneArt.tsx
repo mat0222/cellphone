@@ -1,15 +1,17 @@
+import { publicUrl } from "../publicUrl";
+
 export type PhoneModel = "iphone15" | "a54" | "edge40" | "redmi" | "iphone13" | "s23" | "realme" | "g84" | "poco";
 
 const phoneImages: Record<PhoneModel, string> = {
-  iphone15: "/assets/phones/iphone-15.jpg",
-  a54: "/assets/phones/galaxy-a54.jpg",
-  edge40: "/assets/phones/motorola-edge-40.jpg",
-  redmi: "/assets/phones/redmi-note-12.jpg",
-  iphone13: "/assets/phones/iphone-13.jpg",
-  s23: "/assets/phones/galaxy-s23.jpg",
-  realme: "/assets/phones/realme-c67.jpg",
-  g84: "/assets/phones/motorola-g84.jpg",
-  poco: "/assets/phones/poco-x6.jpg",
+  iphone15: publicUrl("/assets/phones/iphone-15.jpg"),
+  a54: publicUrl("/assets/phones/galaxy-a54.jpg"),
+  edge40: publicUrl("/assets/phones/motorola-edge-40.jpg"),
+  redmi: publicUrl("/assets/phones/redmi-note-12.jpg"),
+  iphone13: publicUrl("/assets/phones/iphone-13.jpg"),
+  s23: publicUrl("/assets/phones/galaxy-s23.jpg"),
+  realme: publicUrl("/assets/phones/realme-c67.jpg"),
+  g84: publicUrl("/assets/phones/motorola-g84.jpg"),
+  poco: publicUrl("/assets/phones/poco-x6.jpg"),
 };
 
 export function PhonePair({ model, className = "h-28 w-full" }: { model: PhoneModel; className?: string }) {
@@ -27,9 +29,9 @@ export function PhonePair({ model, className = "h-28 w-full" }: { model: PhoneMo
 }
 
 const heroSlides = [
-  ["/assets/phones/iphone-15.webp", "/assets/phones/galaxy-a54.webp", "/assets/phones/redmi-note-12.webp"],
-  ["/assets/phones/iphone-13.webp", "/assets/phones/galaxy-s23.webp", "/assets/phones/motorola-edge-40.webp"],
-  ["/assets/phones/poco-x6.webp", "/assets/phones/realme-c67.webp", "/assets/phones/motorola-g84.webp"],
+  [publicUrl("/assets/phones/iphone-15.webp"), publicUrl("/assets/phones/galaxy-a54.webp"), publicUrl("/assets/phones/redmi-note-12.webp")],
+  [publicUrl("/assets/phones/iphone-13.webp"), publicUrl("/assets/phones/galaxy-s23.webp"), publicUrl("/assets/phones/motorola-edge-40.webp")],
+  [publicUrl("/assets/phones/poco-x6.webp"), publicUrl("/assets/phones/realme-c67.webp"), publicUrl("/assets/phones/motorola-g84.webp")],
 ];
 
 export function HeroPhones({ slide = 0, className = "" }: { slide?: number; className?: string }) {
@@ -45,8 +47,8 @@ export function HeroPhones({ slide = 0, className = "" }: { slide?: number; clas
 
 export function PromoPhones({ variant, className = "" }: { variant: "special" | "finance"; className?: string }) {
   const images = variant === "special"
-    ? ["/assets/phones/iphone-15.webp", "/assets/phones/galaxy-a54.webp"]
-    : ["/assets/phones/redmi-note-12.webp", "/assets/phones/iphone-13.webp"];
+    ? [publicUrl("/assets/phones/iphone-15.webp"), publicUrl("/assets/phones/galaxy-a54.webp")]
+    : [publicUrl("/assets/phones/redmi-note-12.webp"), publicUrl("/assets/phones/iphone-13.webp")];
 
   return (
     <div className={`relative ${className}`} aria-hidden="true">

@@ -1,8 +1,8 @@
-import { useState } from "react";
 import { BrandBar } from "../components/BrandBar";
 import { HeroPhones, PhonePair } from "../components/RealPhoneArt";
 import { Stars } from "../components/Stars";
 import { featuredProducts, formatPrice, whyBuy, type View } from "../data";
+import { publicUrl } from "../publicUrl";
 
 export function HomePage({
   onNavigate,
@@ -21,7 +21,6 @@ export function HomePage({
   favorites: string[];
   onFavorite: (name: string) => void;
 }) {
-  const [slide, setSlide] = useState(0);
   return (
     <div className="bg-[#f4f7fb]">
       <section className="relative overflow-hidden bg-[#050d1c] text-white">
@@ -48,13 +47,7 @@ export function HomePage({
             </button>
           </div>
           <div className="relative hidden h-[290px] md:block">
-            <HeroPhones slide={slide} className="absolute inset-x-0 -bottom-8 h-[350px] w-full" />
-            <button type="button" aria-label="Anterior" onClick={() => setSlide((value) => (value + 2) % 3)} className="absolute bottom-3 right-14 grid h-11 w-11 place-items-center rounded-full bg-black/50 text-white">
-              ‹
-            </button>
-            <button type="button" aria-label="Siguiente" onClick={() => setSlide((value) => (value + 1) % 3)} className="absolute bottom-3 right-2 grid h-11 w-11 place-items-center rounded-full bg-black/50 text-white">
-              ›
-            </button>
+            <HeroPhones className="absolute inset-x-0 -bottom-8 h-[350px] w-full" />
           </div>
         </div>
       </section>
@@ -66,7 +59,7 @@ export function HomePage({
           title="Promociones especiales"
           text="Los mejores descuentos en modelos seleccionados."
           action="Ver promos →"
-          images={["/assets/phones/iphone-15.jpg", "/assets/phones/galaxy-a54.jpg"]}
+          images={[publicUrl("/assets/phones/iphone-15.jpg"), publicUrl("/assets/phones/galaxy-a54.jpg")]}
           onAction={onPromos}
         />
         <article className="relative flex items-center gap-4 overflow-hidden rounded-2xl bg-gradient-to-br from-[#0c2f73] to-[#07111e] p-5 text-white">
@@ -87,7 +80,7 @@ export function HomePage({
           title="Financiación"
           text="Hasta 12 cuotas sin interés."
           action="Ver más →"
-          images={["/assets/phones/motorola-edge-40.jpg", "/assets/phones/iphone-13.jpg"]}
+          images={[publicUrl("/assets/phones/motorola-edge-40.jpg"), publicUrl("/assets/phones/iphone-13.jpg")]}
           onAction={() => onInfo("cuotas")}
         />
       </div>

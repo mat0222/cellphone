@@ -1,11 +1,13 @@
+import { publicUrl } from "../publicUrl";
+
 export function BrandBar({ onBrand }: { onBrand: (brand: string) => void }) {
   const brands = [
     { id: "Apple", label: "Apple", node: <AppleMark /> },
-    { id: "Samsung", label: "Samsung", node: <img src="/assets/brands/samsung.svg" alt="" className="h-[14px] w-auto" /> },
+    { id: "Samsung", label: "Samsung", node: <img src={publicUrl("/assets/brands/samsung.svg")} alt="" className="h-[14px] w-auto" /> },
     { id: "Xiaomi", label: "Xiaomi", node: <XiaomiMark /> },
-    { id: "Motorola", label: "Motorola", node: <img src="/assets/brands/motorola.svg" alt="" className="h-[30px] w-auto" /> },
-    { id: "Realme", label: "realme", node: <img src="/assets/brands/realme.svg" alt="" className="h-[22px] w-auto" /> },
-    { id: "TCL", label: "TCL", node: <img src="/assets/brands/tcl2.svg" alt="" className="h-[20px] w-auto" /> },
+    { id: "Motorola", label: "Motorola", node: <img src={publicUrl("/assets/brands/motorola.svg")} alt="" className="h-[30px] w-auto" /> },
+    { id: "Realme", label: "realme", node: <img src={publicUrl("/assets/brands/realme.svg")} alt="" className="h-[22px] w-auto" /> },
+    { id: "TCL", label: "TCL", node: <img src={publicUrl("/assets/brands/tcl2.svg")} alt="" className="h-[20px] w-auto" /> },
   ];
 
   return (

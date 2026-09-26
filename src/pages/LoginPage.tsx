@@ -1,5 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { Logo } from "../components/Logo";
+import { publicUrl } from "../publicUrl";
 
 export function LoginPage({ onEnter, onBack }: { onEnter: () => void; onBack: () => void }) {
   const [email, setEmail] = useState("admin@cellzone.com");
@@ -17,7 +18,7 @@ export function LoginPage({ onEnter, onBack }: { onEnter: () => void; onBack: ()
     <div className="relative grid min-h-screen place-items-center overflow-hidden bg-[#020914] px-4 py-10">
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(132deg,transparent_0%,transparent_25%,#0d3e8b_25.3%,transparent_26%,transparent_51%,#0b3474_51.3%,transparent_52%),radial-gradient(circle_at_72%_37%,#0d3980_0%,#07182d_30%,transparent_58%)]" />
       <img
-        src="/assets/phones/iphone-15.webp"
+        src={publicUrl("/assets/phones/iphone-15.webp")}
         alt=""
         className="pointer-events-none absolute right-[4%] top-[4%] hidden h-[92%] w-[48%] rotate-[8deg] object-contain opacity-45 drop-shadow-[0_0_70px_rgba(47,123,255,.45)] md:block"
       />
