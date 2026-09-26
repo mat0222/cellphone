@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, sans-serif;
+  --color-brand: #2f7bff;
+  --color-navy: #07111e;
+  --color-ink: #0e1726;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+}
+
+:focus-visible {
+  outline: 2px solid #2f7bff;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  font-family: Inter, system-ui, sans-serif;
+  background: #f5f7fb;
+  color: #0e1726;
+}
+
+button,
+input,
+select {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  transition: border-color 160ms ease, background-color 160ms ease, color 160ms ease, opacity 160ms ease, transform 160ms ease;
+}
+
+.field[aria-invalid="true"] {
+  border-color: #dc2626;
+}
+
+.field {
+  margin-top: 0.375rem;
+  display: block;
+  width: 100%;
+  min-height: 2.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #dbe2ea;
+  padding-inline: 0.75rem;
+  color: #142033;
+  outline: none;
+}
+
+.field:focus {
+  border-color: #2f7bff;
+  box-shadow: 0 0 0 3px rgb(47 123 255 / 10%);
+}
+
+.admin-sidebar {
+  transform: translateX(-100%);
+}
+
+.admin-sidebar.is-open {
+  transform: translateX(0);
+}
+
+@media (min-width: 1024px) {
+  .admin-sidebar {
+    transform: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .text-3xl {
+    font-size: 1.65rem;
+  }
+}
